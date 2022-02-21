@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+  <title>Summarization</title>
+   <link rel = "icon" href ="https://firebasestorage.googleapis.com/v0/b/summarization-d8b27.appspot.com/o/s.png?alt=media&token=becc1876-f259-499f-8dc6-2803b2bff777" type = "image/x-icon"> 
+   <script>
+history.pushState(null, document.title, location.href);
+window.addEventListener('popstate', function (event)
+{
+  history.pushState(null, document.title, location.href);
+});
+
+window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        };
+
+</script>
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+   <title>Summarisation</title>
+      <style>
+	  
+		.browsebtn, .uploadbtn {
+				background-color:#454585;
+				color:white;
+				border: none;
+				padding: 15px 30px;
+				border-radius: 12px;
+				/*float:left;*/
+				font-size:20px;
+				margin-top: 20px;	
+			}  
+			
+			.btn {
+			background-color:#7ec89e;
+			//background-color: Transparent;
+				background-repeat:no-repeat;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			opacity: 0.9;
+			}
+			
+			.container {
+				align:middle;
+				margin: 20px;
+				max-width: 450px;
+				padding: 16px;
+				background-color:white;
+				//background-color: Transparent;
+				background-repeat:no-repeat;
+				border-radius:25px;
+				margin-top:15px;
+			} 
+			
+			.btn:hover {
+    opacity: 0.7;
+}
+			
+.alert3 {
+  padding: 20px;
+  background-color:#f44336;
+  color:transparent;
+ 
+}
+.container2{
+				align:middle;
+				margin: 20px;
+				max-width: 450px;
+				padding: 16px;
+				border:none;
+				background-color: Transparent;
+				background-repeat:no-repeat;
+				border-radius:25px;
+				border-radius:25px;
+				margin-top:15px;
+			} 
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}	
+.alert {
+  padding: 20px;
+  background-color:#f44336;
+  color:white;
+ 
+}
+.btn3{
+			border:none;
+			//background-color:#282828;
+			background-color: Transparent;
+				background-repeat:no-repeat;
+			color: white;
+			padding: 16px 10px;
+			border: none;
+			cursor: pointer;
+			opacity: 0.9;
+			}
+			
+			
+			  
+			
+.btn3:hover {
+    opacity: 0.9;
+}  
+	body {background-color:#4b4b5d;}	
+	  </style>
+   </head>
+    
+  <body>			
+	 <nav class="navbar navbar-expand-lg navbar-dark">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+			  <form method="POST" action="/navi" enctype="multipart/form-data">>
+
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active" class="form-inline my-2 my-lg-0">
+					 <button type="submit" class="btn3" style="width:100px;" name="home" value="HOME"><i class="fa fa-home"></i>HOME</button>
+					</li>
+					<li class="nav-item active" class="form-inline my-2 my-lg-0">
+					  <button type="submit"  class="btn3" style="width:100px;" name="history" value="HISTORY"><i class="fa fa-history"></i>HISTORY</button>
+					  <!--<button class="btn"><i class="fa fa-history" name="history" type="submit" value="HISTORY"></i> History</button>-->
+					</li>
+					<pre>                                                                                               			      						                                          </pre>
+					<li class="nav-item active" class="form-inline my-2 my-lg-0">
+					<button class="btn3" type="submit" name="logout" style="width:100px;" value="LOGOUT"><i class="fa fa-sign-out"></i>LOGOUT</button>
+					<!--<button class="btn"><i class="fa fa-sign-out name="history" type="submit" value="HISTORY"></i> History</button>-->
+					</li>
+					</ul>
+				  </form>
+				</div>
+			  </nav>
+
+	 <center>
+	
+	<form  class="container2" action = "http://localhost/uploadtry/New%20folder/video.php" method = "POST" enctype="multipart/form-data">	
+	
+	<div id="id1" >
+				 <span  id="mySpan" onclick="this.parentElement.style.display='none';">&times;</span>
+				<font color="white"></font>
+			
+			</span>
+			</div>	
+			
+			
+	<div class="alert3" id="id2" >
+				 <span  id="mySpan" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				<font color="white"> Please browse a '.mp4' file</font>
+			
+			</span>
+			</div>			
+	
+		<input type="file" accept=".mp4,.mkv" id="selectedFile" style="display: none;" name="file" class="btn"/>
+		<input type="button" name="file" class="btn" value="Browse..." style="width:150px;" onclick="document.getElementById('selectedFile').click();" />
+		<input type="submit" name="upload" value ="Proceed to summary"  style="width:250px;" id="show_button" class="btn"/>
+     </form>
+			
+    <form action = "/video"  class="container2" method = "POST" enctype="multipart/form-data">
+	 {% if error =='file not found' %}
+					<div  class="alert">
+				  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				  <strong>Error!! </strong>File not choosen or not proceeded to summary!!
+				</div>				
+								
+
+		{% endif %}
+		<p><button type="submit" name="see_data" value ="View summary" name="View summary" class="btn" style="width:150px;">View summary</button></p>
+		
+    </form>
+	<div id="id01"/>
+	<form class="container"  id="id1" align="center" form action ="/video1" method = "POST" enctype="multipart/form-data"/>
+		<input type="submit" value="Actual Video" class="btn" name="av"/>
+		 <br><br>
+		<input type="submit" value="Summarised Video" class="btn" name="sv"/>
+		<br><br>
+		<input type="hidden" value="{{selection}}"/> 
+		<video width="400" controls>
+	  <source src="{{selection}}" type="video/mp4">
+	  </div>
+	</video>
+
+     </form>
+	 
+	<script>
+	
+	var modal = document.getElementById('id01'); 
+		  
+		  
+		window.onclick = function(event) { 
+			if (event.target == modal) { 
+			   // modal.style.display = "none"; 
+			} 
+		} 
+		
+		
+		var searchString = document.location.search;
+		var modal1 = document.getElementById('id1'); 
+		var modal2 = document.getElementById('id2'); 
+// strip off the leading '?'
+searchString = searchString.substring(1);
+//alert(searchString);
+if(searchString=='error')
+{
+	//alert("rashmi");
+	//alert(searchString);
+	document.getElementById('myid').value=searchString;
+	//document.getElementById("divMsg").innerHTML = searchString;
+	var span = document.getElementById ("mySpan");
+            span.style.color = "white";
+			//document.getElementById("mySpan").textContent="Please browse a file";
+			modal2.style.display = "none";
+}
+else if(searchString=='')
+{
+//alert('kabra');
+	var span = document.getElementById ("mySpan");
+            span.style.color = "transparent";
+			modal1.style.display = "none";
+			modal2.style.display = "none";
+			
+}
+else if(searchString=='error2')
+{
+	//var span = document.getElementById ("mySpan");
+      //      span.style.color = "transparent";
+		//	modal1.style.display = "none";
+		//alert('wrong file');
+			modal1.style.display = "none";
+			//modal1.style.display = "none";
+}	
+		
+		
+</script>
+	 
+	
+   </body>
+
+</html>

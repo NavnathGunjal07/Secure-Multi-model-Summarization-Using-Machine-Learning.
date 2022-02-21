@@ -1,0 +1,156 @@
+
+<html>
+<head>
+<title>Summarization</title>
+<link rel = "icon" href ="https://firebasestorage.googleapis.com/v0/b/summarization-d8b27.appspot.com/o/s.png?alt=media&token=becc1876-f259-499f-8dc6-2803b2bff777" type = "image/x-icon"> 
+<script>
+history.pushState(null, document.title, location.href);
+window.addEventListener('popstate', function (event)
+{
+  history.pushState(null, document.title, location.href);
+});
+
+window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        };
+
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+button#arc{
+	width:200px;
+	padding: 7px;
+    font-size: 13px;
+    border: true;
+    width: 10%;
+	margin-top: 40px;
+	//margin-left:200px;
+	opacity:0.7;
+	border-radius:10px;
+	color:black;
+}
+.container {
+    align:center;
+    margin: 20px;
+    max-width: 350px;
+    padding: 16px;
+    border:none;
+	background-color: Transparent;
+    background-repeat:no-repeat;	
+	border-radius:25px;
+	margin-top:15px;
+}
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.btn {
+    background-color:#7ec89e;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}.abc{
+	border:none;
+	 border:none;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	margin-left:210px;
+}hover {
+    opacity: 0.7;
+}
+.img_container{
+    text-align: center;
+	font-size: 50px;
+    
+}
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+.alert2{
+  padding: 20px;
+  background-color:green;
+  color: white;
+  width:auto;
+}
+
+
+
+</style>
+</head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<body bgcolor="#4b4b5d">	
+  <br><br><br>  <br>
+  <center>
+ <form class="container" method="POST" action="/verifyfunction" enctype="multipart/form-data">
+    <h1><font color="white">Verification Link</font></h1>
+<br>
+
+{% if error == 'Password reset successfully'%}
+			
+				<div class="alert2">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Success!! </strong>Link sent to your email.
+</div>
+		{% endif %}
+		
+		{% if error == 'Enter valid E-MAIL'%}
+			
+				<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Error!! </strong>Invalid E-Mail or password
+</div>
+		{% endif %}
+			
+
+		
+    <input type="email" placeholder="Enter Email" id="forgotpass" name="forgotpass"><br>
+	<input type="password" placeholder="Enter password" id="pass" name="pass"><br>
+
+   
+   
+
+    <button type="submit" id="send_link" name="send_link" value="send_link"class="btn">Send Link To EMAIL</button>
+	<br>
+	
+	<br><br>
+
+	<button type="submit"name="login" value="Login" class="abc" />
+	<font color="white"><i class="fa fa-user-circle-o"></i> Login</font></button>
+	
+  </form>
+  </center>
+
+</body>
+</html>

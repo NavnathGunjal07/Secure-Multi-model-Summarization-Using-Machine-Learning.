@@ -1,0 +1,102 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+button#arc{
+	width:200px;
+	padding: 7px;
+    font-size: 13px;
+    border: true;
+    width: 10%;
+	margin-top: 40px;
+	//margin-left:200px;
+	opacity:0.7;
+	border-radius:10px;
+	color:black;
+}
+.container {
+    align:center;
+    margin: 20px;
+    max-width: 350px;
+    padding: 16px;
+    border:none;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	border-radius:25px;
+	margin-top:15px;
+}
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.btn {
+    background-color:#282828;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.abc{
+	border:none;
+	 border:none;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	margin-left:210px;
+}
+.btn:hover {
+    opacity: 0.7;
+}
+</style>
+<body background="static/technology.gif">
+<!--<button class="btn"><i class="fa fa-home"></i> Home</button>
+<button class="btn"><i class="fa fa-user-plus"></i> Signup</button>-->
+
+  <br><br><br>  <br>
+  <center>
+  <form class="container" method="POST" action="/storedata">
+   <h1><font color="white">LOGIN</font></h1>
+<center> <img src="static/login.png"> </center>
+
+    {% if error %}
+			
+				<strong style="margin-left:100px;">
+					<font color="red" size="2">
+					Error:
+					</font>
+				</strong>
+				<font size="2">
+				{{ error }}
+				</font>
+		{% endif %}
+		<br>
+    <input type="email" placeholder="Enter Email" name="email" ><br>
+
+   
+    <input type="password" placeholder="Enter Password" name="psw" >
+	<br>
+
+    <button type="submit"  name="login" value="LOGIN" class="btn"><i class="fa fa-user-circle-o"></i> Login</button>
+	<br>
+	<br>
+	<button type="submit"name="signup" value="SIGNUP" class="abc" style="background:C:/Users/Rashmi Kabra/Desktop/rashmi_final_project/summ/app/static/a.jpg" />
+	<font color="white"><i class="fa fa-user-plus"></i> signup</font></button>
+	
+<button type="submit"name="forgetpass" value="FORGETPASS" class="abc">
+	<font color="white"><i class="fa fa-key"></i> forgot password</font></button>
+  </form>
+  
+  </center>
+
+</body>
+</html>

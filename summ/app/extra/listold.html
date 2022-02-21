@@ -1,0 +1,211 @@
+<html>
+<head>
+<style>
+button{
+	
+	padding: 7px;
+    font-size: 13px;
+    border: true;
+    width: 15%;
+	margin-top: 60px;
+	border-radius:10px;
+	color:black;
+}
+
+
+body {background-color: powderblue;}
+h1   {color: blue;}
+a   {color: red;  font-size: 350%;
+}
+
+input[type=text], input[type=password] { 
+    width: 100%; 
+    padding: 12px 20px; 
+    margin: 8px 0; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+} 
+  
+  
+button { 
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 14px 20px; 
+    margin: 8px 0; 
+    border: none; 
+    cursor: pointer; 
+    width: 100%; 
+} 
+  
+  
+.cancelbtn { 
+    padding: 14px 20px; 
+    background-color: #f44336; 
+} 
+  
+  
+.cancelbtn,.signupbtn {float:left;width:50%} 
+  
+  
+.container { 
+    padding: 16px; 
+} 
+  
+  
+.modal { 
+    display: none;  
+    position: fixed;  
+    z-index: 1; left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%;  
+    overflow: auto;  
+    background-color: rgb(0,0,0);  
+    background-color: rgba(0,0,0,0.4);  
+    padding-top: 60px; 
+} 
+  
+  
+.modal-content { 
+    background-color: #fefefe; 
+    margin: 5% auto 15% auto;  
+    border: 1px solid #888; 
+    width: 80%;   
+} 
+  
+  
+.close { 
+    position: absolute; 
+    right: 35px; 
+    top: 15px; 
+    color: #000; 
+    font-size: 40px; 
+    font-weight: bold; 
+} 
+  
+.close:hover, 
+.close:focus { 
+    color: red; 
+    cursor: pointer; 
+} 
+  
+  
+.clearfix::after { 
+    content: ""; 
+    clear: both; 
+    display: table; 
+} 
+  
+  
+@media screen and (max-width: 300px) { 
+    .cancelbtn, .signupbtn { 
+       width: 100%; 
+    } 
+}
+
+</style>
+</head>
+<body>
+
+	<script>
+	/*function myFunction() {
+		var textOne = document.getElementById("textOne");
+		var textTwo = document.getElementById("textTwo");
+		//Get the value of textOne textbox input
+		var textOneValue = textOne.value;
+ 
+		var textTwo.value = textOneValue;
+
+	  }*/
+	</script>
+
+
+	<center>
+	<!--
+     <form class="container" method="POST" action="/display_list_text" enctype="multipart/form-data">
+	<button type="submit"name="text" value="Display_text">Text</button><br>
+	<button type="submit"name="audio" value="Display_audio">Audio</button><br>
+	<!--<input value="{{selection}}"/>
+	</form>
+		-->		
+				
+	<form  action ="/display_list_text_audio" method = "POST" enctype="multipart/form-data">
+		<input type="submit" value="Display_text" name="text"/>
+		<input type="submit" value="Display_audio" name="audio"/>
+		<input value="{{selection}}"> 
+		
+
+     </form>
+	
+	
+	</center>
+	<!--
+	
+	{% for l in t %}
+	<p>
+	<form  class="container" method="POST" action="/decrypt_{{selection}}" enctype="multipart/form-data">
+	<!--<input type="text" id="textTwo/>-->
+		<!--<input type="submit" name="file" value="{{l[0]}}"><br>-->
+	
+	
+	
+	<br>
+	<!--{% endfor %}
+	</form>-->
+	
+	</p>
+	
+	
+	
+	
+	{% for l in t %}
+	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"  name="file" value="{{l[0]}}">{{l[0]}}</button><br>
+	<form  method="POST" action="/decrypt" enctype="multipart/form-data">
+	<input type="submit" onclick="document.getElementById('id01').style.display='block'" name="{{l[0]}}" value="{{l[0]}}"  style="width:auto;"></button><br>
+	</form>
+	<div id="id01" class="modal"> 
+	  <span class="close" title="Close Modal">×</span> 
+	  <form class="modal-content animate" method="POST" action="/decrypt_{{selection}}" enctype="multipart/form-data"> 
+		<div class="container"> 
+	   
+		  <label><b>Enter key</b></label> 
+		  <input type="password" placeholder="Enter key" name="psw" required> 
+	  
+	   
+		  <div class="clearfix"> 
+			<button type="button" class="cancelbtn">Cancel</button> 
+			<button type="submit" class="signupbtn" name="btn" value="{{l[0]}}">Submit</button> 
+		  </div> 
+		</div> 
+	  </form> 
+	</div> 
+	  
+	<br> 
+
+	{% endfor %} 
+	<script> 
+	  
+	var modal = document.getElementById('id01'); 
+	  
+	  
+	window.onclick = function(event) { 
+		if (event.target == modal) { 
+			//modal.style.display = "none"; 
+		} 
+	} 
+	
+	
+	
+	</script> 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

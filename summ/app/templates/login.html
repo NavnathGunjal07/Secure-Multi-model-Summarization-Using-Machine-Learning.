@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>Summarization</title>
+<link rel = "icon" href ="https://firebasestorage.googleapis.com/v0/b/summarization-d8b27.appspot.com/o/s.png?alt=media&token=becc1876-f259-499f-8dc6-2803b2bff777" type = "image/x-icon"> 
+<script>
+
+window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        }; </script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+button#arc{
+	width:200px;
+	padding: 7px;
+    font-size: 13px;
+    border: true;
+    width: 10%;
+	margin-top: 40px;
+	//margin-left:200px;
+	opacity:0.7;
+	border-radius:10px;
+	color:black;
+}
+.container {
+    align:center;
+    margin: 20px;
+    max-width: 350px;
+    padding: 16px;
+    border:none;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	border-radius:25px;
+	margin-top:15px;
+}
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.btn {
+    background-color:#7ec89e;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.abc{
+	border:none;
+	 border:none;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	margin-left:210px;
+}
+.abcd{
+	border:none;
+	 border:none;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	margin-left:0px;
+}
+.btn:hover {
+    opacity: 0.7;
+}
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.alert2{
+  padding: 20px;
+  background-color:lightblue;
+  color: white;
+  width:auto;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: white;
+}
+.closebtn2 {
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn2:hover {
+  color: gray;
+}
+
+
+
+
+</style>
+</head>
+<body bgcolor="#4b4b5d">
+  <br>
+   <center>
+
+ 
+   <form class="container" method="POST" action="/storedata">
+   <h1><font color="white">LOGIN</font></h1>
+<center> <img src="static/login.png"> </center>
+
+	{% if error== 'resend link'%}
+	<div class="alert2">
+  <span class="closebtn2" onclick="this.parentElement.style.display='none';">&times;</span> 
+ <font color="black"> A link is sent to your email.Verify your email-id by clicking on the link sent to you!!.
+</div>				
+				
+
+		{% endif %}
+
+   {% if error =='Enter valid data either email or password wrong'%}
+	<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Error!! </strong>Either email or password wrong.
+</div>				
+				
+
+		{% endif %}
+		{% if error =='Verify your email'%}
+	<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  Please verify your email to login!!.<br><br>
+  <a href="/verifyfunction"><b><font color="white"><i class="fa fa-check-circle"></i> Resend verification link?</a></font></b>
+</div>				
+				
+
+		{% endif %}
+		<br>
+    <input type="email" placeholder="Enter Email" name="email"><br>
+
+   
+    <input type="password" placeholder="Enter Password" name="psw">
+	<br>
+
+    <button type="submit"  name="login" value="LOGIN" class="btn"><i class="fa fa-user-circle-o"></i> Login</button>
+	<br>
+	<br>
+	<button type="submit"name="signup" value="SIGNUP" class="abc" />
+	<font color="white"><i class="fa fa-user-plus"></i> signup</font></button>
+	
+	<button type="submit"name="forgetpass" value="FORGETPASS" class="abc">
+	<font color="white"><i class="fa fa-key"></i> forgot password</font></button>
+	
+  </form>
+  
+  </center>
+
+</body>
+</html>

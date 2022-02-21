@@ -1,0 +1,109 @@
+
+<html>
+
+
+<head>
+
+
+<style>
+button#arc{
+	width:200px;
+	padding: 7px;
+    font-size: 13px;
+    border: true;
+    width: 10%;
+	margin-top: 40px;
+	//margin-left:200px;
+	opacity:0.7;
+	border-radius:10px;
+	color:black;
+}
+.container {
+    align:center;
+    margin: 20px;
+    max-width: 350px;
+    padding: 16px;
+    background-color: white;
+	border-radius:25px;
+	margin-top:15px;
+}
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.btn {
+    background-color: #33334d;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.abc{
+	border:none;
+	background-color:white;
+	margin-left:210px;
+}
+.btn:hover {
+    opacity: 0.7;
+}
+.img_container{
+    text-align: center;
+	font-size: 50px;
+    
+}
+</style>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<body background="https://images.template.net/wp-content/uploads/2016/11/16122421/Steal-Your-Thunder.gif?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+<div class="img_container">
+<i class="fa fa-lock fa-4x"></i>
+</div>
+  <br><br><br>  <br>
+  <center>
+  <form class="container" method="POST" action="/storedata">
+    <h1><font color="#33334d">Forgot Password</font></h1>
+<p>You can reset your password here.</p>
+
+{% if error %}
+			
+				<strong style="margin-left:100px;">
+					<font color="red" size="2">
+					Error:
+					</font>
+				</strong>
+				<font size="2">
+				{{ error }}
+				</font>
+		{% endif %}
+
+    
+			
+
+		
+    <input type="email" placeholder="Enter Email" id="forgotpass" name="forgotpass" ><br>
+
+   
+   
+
+    <button type="submit" id="send_link" name="send_link" value="send_link"class="btn">Send Link To EMAIL</button>
+	<br>
+	
+	<br><br>
+
+  </form>
+  </center>
+
+</body>
+</html>

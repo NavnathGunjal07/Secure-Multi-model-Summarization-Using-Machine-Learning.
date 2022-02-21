@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Summarization Project</title>
+		<link rel = "icon" href ="https://firebasestorage.googleapis.com/v0/b/summarization-d8b27.appspot.com/o/s.png?alt=media&token=becc1876-f259-499f-8dc6-2803b2bff777" type = "image/x-icon"> 
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="static/main.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		
+	<script>
+history.pushState(null, document.title, location.href);
+window.addEventListener('popstate', function (event)
+{
+  history.pushState(null, document.title, location.href);
+});
+</script>
+	<style>
+	
+	.container2{
+				align:middle;
+				margin: 20px;
+				max-width: 450px;
+				padding: 16px;
+				border:none;
+				background-color:transparent;
+				background-repeat:no-repeat;
+				border-radius:25px;
+				border-radius:25px;
+				margin-top:15px;
+			} 
+	.alert2 {
+  padding: 20px;
+  background-color:lightgreen;
+  color:yellow;
+ 
+}
+.closebtn {
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: gray;
+}
+
+.main-slide-2{
+			background-color: #ECEBEB;
+		}
+.main-slide-3{
+			background-color: #FFFFFF;
+		}
+		
+	</style>
+	</head>
+	<body>
+
+	<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a class="logo"><strong><font color="white">Project</strong> by SSIERAS</a>
+					<form method="POST" action="/aboutnavi" enctype="multipart/form-data">
+					<nav id="nav">
+						<button class="btn" type="submit" name="register" style="width:120px;" value="REGISTER" color="white"><font color="white"><i class="fa fa-user-plus"></i>Register</button>
+						<button class="btn" type="submit" name="login" style="width:120px;" value="LOGIN"><font color="white"><i class="fa fa-user-circle-o"></i>Login</button>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+					</form>
+				</div>
+			</header>
+		
+
+		
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+					<div>
+					
+					
+					{% if error %}
+				<div class="alert2" class="container2">
+			  <strong><font color="black">Succcess!!  </strong>{{error}}</font>
+			   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			 
+			</div>				
+				
+
+		{% endif %}
+<h2 style="font-family:font-family:serif;"><i><font color=" #7ec89e">BE IN PACE WITH OTHERS, KEEP THEE CONCISE</h4></i>
+<br><div class="image round">
+							
+					<img src="static/logo.jpeg" width="100" height="100" alt="Pic 01" align = "center"/>
+					</div>
+				<br><h1>Welcome to Summarization</h1>
+					</header>
+
+					<div class="flex ">
+
+						<div>
+							<span class="icon fa fa-file-text"></span>
+							<h3>TEXT</h3>
+							<p>Text Summarization</p>
+						</div>
+
+						<div>
+							<span class="icon fa-file-audio-o"></span><br>
+							<h3>AUDIO</h3>
+							<p>Audio Summarization</p>
+						</div>
+
+						<div>
+							<span class="icon fa fa-video-camera"></span><br>
+							<h3>VIDEO</h3>
+							<p>Video Summarization</p>
+						</div>
+
+					</div>
+					
+					<footer>
+					
+						</footer>
+				</div>
+			</section>	
+			<section class="main-slide-2">
+				<center>
+				<header class="main-slide-2-header"><h1>WEBAPP FEATURES</h1></header>
+				<h5>The platform where huge data is converted into shorter version </h5>
+				<br>
+				<div class="grid-container">
+				<center>
+					<!-- <div class="span" style="outline: 1px solid orange"> -->
+						<div class="row">
+							<div class="col-lg-4">
+								<div>
+								<div class="image round">
+						<img src="static/secure.png" alt="Pic 01" />
+					</div>			
+									<h4 class="h4-slide-2">Highlly-Secure</h4>
+									<p><font color="#4671FD">The account data and store data is completely secure through use of firebase server, and AES mechanisam</p></font>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div>
+									<div class="image round">
+						<img src="static/friend.png" alt="Pic 01" />
+					</div>
+									<h4 class="h4-slide-2">User friendly interface</h4>
+									<p><font color="#4671FD">Each and every page , provide user friendly navigation, with proper service</p></font>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div>
+									<div class="image round">
+						<img src="static/time.png" alt="Pic 01" />
+					</div>
+									<h4 class="h4-slide-2">Feature of HISTORY</h4>
+									<p><font color="#4671FD">User is able to retrive summarize data, any time</p></font>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div>
+									<div class="image round">
+						<img src="static/multi.png" alt="Pic 01" />
+					</div>
+									<h4 class="h4-slide-2">Summarization of multiple modal</h4>
+									<p><font color="#4671FD">Our platform support multiple data to be summarize. i.e. TEXT, AUDIO, VIDEO</p></font>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div>
+									<div class="image round">
+						<img src="static/unique.png" alt="Pic 01" />
+					</div>
+									<h4 class="h4-slide-2">Unique</h4>
+									<p><font color="#4671FD">Along with supporting of multiple modal summarization the feature of storing data seurely leads to uniqueness</p></font>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div>
+									<div class="image round">
+						<img src="static/responsive.png" alt="Pic 01" />
+					</div>
+									<h4 class="h4-slide-2">Universal and Responsive</h4>
+									<p><font color="#4671FD">Along with accessing of data, our platform provide responsiveness to the users</p></font>
+								</div>
+							</div>
+						</div>
+						<br><br><br><br><br>
+					<!-- </div>	 -->
+					</center>
+				</div>
+				</center>
+			</section>
+			
+
+		<!-- Three -->
+		<br>
+		<section class="main-slide-3">
+				<center>
+				<br>
+					<h4><font color="#282828"><font size="6">Guidance and Special Thanks</h4></font>
+					<br>
+					<div class="image round">
+						<img src="static/dangesir.jpg" width="200" height="230" alt="Pic 01" />
+					</div>			
+					<header>
+						<h3><font color="#282828"> Prof.Dange Sir</h3></font>
+					</header>						
+				</center>
+			<section id="three" class="wrapper align-center">
+				<center><h4><font color="#282828"><font size="6">Developers</h4></center></font>
+				<div class="inner">
+					<div class="flex flex-2">
+						<article>
+							<div class="image round">
+								<img src="static/Navnathgunjal.jpg" width="200" height="230" alt="Pic 01" />
+							</div>
+							<header>
+								<h3><font color="#282828">Navnath Gunjal</h3></font>
+							</header>
+						</article>
+						<article>
+							<div class="image round">
+								<img src="static/sandipmapari.jpg" width="200" height="230" alt="Pic 02" />
+							</div>
+							<header>
+								<h3><font color="#282828">Sandip Mapari</h3></font>
+							</header>
+							
+						</article>
+						<br>
+						<br>
+							<article>
+							<div class="image round"><br>
+								<img src="static/anikettaskar.jpg" width="200" height="230" alt="Pic 02" />
+							</div>
+							<header>
+								<h3><font color="#282828">Aniket Taskar</h3></font>
+							</header>
+						</article>
+						<article>
+							<div class="image round">
+							<br>
+								<img src="static/dahaleswapnil.jpg" width="200" height="230" alt="Pic 01" />
+							</div>
+							<header>
+								<h3><font color="#282828">Swapnil Dahale</h3></font>
+							</header>
+							
+						</article>
+					
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					
+
+					<h3><font color="white"><font size="6">Get In Touch</h3></font>
+
+					<form method="POST" action="/aboutsendmessage" enctype="multipart/form-data">
+					
+						<div class="field half first">
+							<label for="name"><font size="4">Name</label></font>
+							<input name="name" id="name" type="text" placeholder="Name" onkeypress="return (event.charCode > 64 && 
+	event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)|| (event.charCode == 8) || (event.charCode == 32)" required>
+						</div>
+						<div class="field half">
+							<label for="email"><font size="4">Email</label></font>
+							<input name="email" id="email" type="email" placeholder="Email" required>
+						</div>
+						<div class="field">
+							<label for="message"><font size="4">Message</label></font>
+							<textarea name="message" id="message" rows="6" placeholder="Message" required></textarea>
+						</div>
+						<button type="submit" class="btn" style="width:auto;"><font color="white"><i class="fa fa-envelope" aria-hidden="true"></i>SEND MESSAGE</button>
+					</form>
+
+					
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

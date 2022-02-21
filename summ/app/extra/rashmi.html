@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+
+   <head>
+   <title>Summarisation</title>
+      
+   </head>
+
+   <body>
+ 
+	
+ 
+     <form action ="/video1" method = "POST" enctype="multipart/form-data">
+		<input type="submit" value="Actual Video" name="av"/>
+		<input type="submit" value="Summarised Video" name="sv"/>
+		<input value="{{selection}}"/> 
+		
+
+     </form>
+     <!--
+	<video width="400" controls>
+			<source src="C:\Users\Rashmi Kabra\Desktop\rashmi_final_project\summ\app\templates\sample_1.mp4" type="video/mp4">
+		</video>
+	-->
+	
+	<video width="400" controls>
+	  <source src="{{selection}}" type="video/mp4">
+	  
+	</video>
+
+	</body>
+
+</html>

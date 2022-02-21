@@ -1,0 +1,405 @@
+<!DOCTYPE>
+<html>
+	<head>
+	<title>Summarization</title>
+	<link rel = "icon" href ="https://firebasestorage.googleapis.com/v0/b/summarization-d8b27.appspot.com/o/s.png?alt=media&token=becc1876-f259-499f-8dc6-2803b2bff777" type = "image/x-icon"> 
+<script>
+history.pushState(null, document.title, location.href);
+window.addEventListener('popstate', function (event)
+{
+  history.pushState(null, document.title, location.href);
+});
+
+
+window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        }; 
+
+</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<style>
+			.container{
+				text-align:center;
+				display:block;
+			}
+			.form1{
+				display:inline-block;
+			}
+			.field{
+				padding-right: 40px;
+				background-color:rgba(0, 0, 0, 0.9);
+				border: none;
+				color:white;
+				font-size:14px;
+			}
+			input[type=text], input[type=password] { 
+			    width: 100%; 
+			    padding: 12px 20px; 
+			    margin: 8px 0; 
+			    display: inline-block; 
+			    border: 1px solid #ccc; 
+			    box-sizing: border-box; 
+			} 
+			  
+			  
+			.viewData { 
+			    background-color:#454585;
+				color:white;
+				border: none;
+				padding: 35px 60px;
+				border-radius: 12px;
+				/*float:left;*/
+				font-size:20px;
+				margin-top: 20px;
+			} 
+			  
+			  
+			.cancelbtn { 
+			    padding: 14px 20px; 
+			    background-color: #f44336; 
+			} 
+			  
+			  
+			.cancelbtn,.signupbtn {float:left;width:50%} 
+			  
+
+			  
+			.container {
+				align:middle;
+				margin: 20px;
+				max-width: 450px;
+				padding: 16px;
+				border:none;
+				background-color:transparent;
+				background-repeat:no-repeat;
+				border-radius:25px;
+				border-radius:25px;
+				margin-top:15px;
+			} 
+			 
+			.container2 {
+				align:middle;
+				margin: 20px;
+				max-width: 450px;
+				padding: 16px;
+				border:none;
+				background-color:transparent;
+				background-repeat:no-repeat;
+				border-radius:25px;
+				border-radius:25px;
+				margin-top:15px;
+			} 
+			.modal { 
+			    display: none;  
+			    position: fixed;  
+			    z-index: 1; 
+				right: 20%; 
+			    top: 0; 
+			    width: 30%; 
+			    height: 40%;  
+			 
+			    background-color: rgb(0,0,0);  
+			    background-color: rgba(0,0,0,0.8);  
+			    padding-top: 60px; 
+			} 
+			  
+			  
+			.modal-content { 
+			    background-color: #fefefe; 
+			    margin: 5% auto 15% auto;  
+			    border: 1px solid #888; 
+			    width: 80%;   
+			} 
+			  
+			  
+			.close { 
+			    position: absolute; 
+			    right: 35px; 
+			    top: 15px; 
+			    color: #000; 
+			    font-size: 40px; 
+			    font-weight: bold; 
+			}
+
+			.cancel2, .signupbtn{
+				 /*background-color: #4CAF50; */
+			    color: white; 
+			    padding: 14px 20px; 
+			    margin: 8px 0; 
+			    border: none; 
+			    cursor: pointer; 
+			    width: 100%; 
+				left: 50%;
+				border-radius: 12px;
+			} 
+			  
+			.close:hover, 
+			.close:focus { 
+			    color: red; 
+			    cursor: pointer; 
+			} 
+			
+			.btn {
+			border:none;
+			background-color:#7ec89e;
+			//background-color: Transparent;
+				background-repeat:no-repeat;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			opacity: 0.9;
+			}
+			
+			
+			  
+			
+.btn:hover {
+    opacity: 0.9;
+}  
+
+.btn3 {
+    // background-color:#282828;
+	 background-color: Transparent;
+	background-repeat:no-repeat;
+    color: white;
+    border: none;
+    cursor: pointer;
+	padding: 16px 10px;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn3:hover {
+    opacity: 0.9;
+}
+			  
+			.clearfix::after { 
+			    content: ""; 
+			    clear: both; 
+			    display: table; 
+			} 
+			
+			.browsebtn, .uploadbtn {
+				background-color:#454585;
+				color:white;
+				border: none;
+				padding: 15px 30px;
+				border-radius: 12px;
+				/*float:left;*/
+				cursor: pointer;
+				font-size:20px;
+				margin-top: 20px;	
+			}  
+			  
+			@media screen and (max-width: 300px) { 
+			    .cancelbtn, .signupbtn { 
+			       width: 100%; 
+			    } 
+			}
+			
+			.alert2 {
+  padding: 20px;
+  background-color:green;
+  color: white;
+ 
+}
+.alert {
+  padding: 20px;
+  background-color:#f44336;
+  color:white;
+ 
+}
+.alert3 {
+  padding: 20px;
+  background-color:#f44336;
+  color:transparent;
+ 
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: white;
+}
+
+textarea {
+  background:transparent; 
+  resize: none;
+  color:white;
+  border:none;	
+  
+}
+body {background-color:#4b4b5d;}
+			
+			
+		</style>
+	</head>
+	<body>		
+		<nav class="navbar navbar-expand-lg navbar-dark">
+<br>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+			  <form method="POST" action="/navi" enctype="multipart/form-data">
+<br>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active" class="form-inline my-2 my-lg-0">
+					 <button type="submit" class="btn3" name="home" style="width:100px;" value="HOME"><i class="fa fa-home"></i>HOME</button>
+					</li>
+					<li class="nav-item active" class="form-inline my-2 my-lg-0">
+					  <button type="submit"  class="btn3" name="history" style="width:100px;" value="HISTORY"><i class="fa fa-history"></i>HISTORY</button>
+					  <!--<button class="btn"><i class="fa fa-history" name="history" type="submit" value="HISTORY"></i> History</button>-->
+					</li>
+					<pre>                                                                                               			      						                                          </pre>
+					<li class="nav-item active" class="form-inline my-2 my-lg-0">
+					<button class="btn3" type="submit" name="logout" style="width:100px;" value="LOGOUT"><i class="fa fa-sign-out"></i>LOGOUT</button>
+					<!--<button class="btn"><i class="fa fa-sign-out name="history" type="submit" value="HISTORY"></i> History</button>-->
+					</li>
+					</ul>
+				  </form>
+				</div>
+			  </nav>
+
+
+		
+		<center>		
+		<span>
+    
+	<form  class="container2" action = "http://localhost/uploadtry/New%20folder/text.php" method = "POST" enctype="multipart/form-data">	
+		
+		<font color="yellow"><input id="myid" value=" " type="hidden" name="myid"/>	</font>
+	
+	<div class="alert3" id="id1" >
+				 <span  id="mySpan" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				<font color="white"> Please browse a file</font>
+			
+			</span>
+			</div>	
+			
+			
+	<div class="alert3" id="id2" >
+				 <span  id="mySpan" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+				<font color="white"> Please browse a '.txt' file</font>
+			
+			</span>
+			</div>			
+
+	<input type="file"  id="selectedFile" style="display: none;"  accept=".txt" name="file" class="btn"/>
+		<i class="fa fa-signout"></i><input type="sumbit" name="file" class="btn" value="Browse..." style="width:auto;" onclick="document.getElementById('selectedFile').click();" />
+		<input type="submit" name="upload" value ="Proceed to summary"  style="width:auto;" class="btn" id="show_button">
+		
+     </form>
+				
+				
+				<form method="POST" class="container" action="/data_or_summary" enctype="multipart/form-data">
+				 {% if error =='File not found' %}
+					<div  class="alert">
+				  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				  <strong>Error!! </strong>File not choosen or not proceeded to summary!!
+				</div>				
+								
+
+		{% endif %}
+		
+		
+				{% if error == 'Data uploaded successfully!!'%}
+				<div class="alert2">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <strong><font color="white">Succcess!!</strong>{{error}}</font>
+			</div>				
+				
+
+		{% endif %}
+		
+		
+			
+					<textarea readonly  rows = "10" cols = "80" name = "file">{{data1}}</textarea><br /><br>
+				
+					<button type="submit"   class="btn" type="submit" name="see_data" value="view data in the file" style="width:auto;">View data in file</button>
+					<button type="submit"   class="btn" name="see_summary" value="View Summary" style="width:auto;"/>View Summary</button>
+					<input type="text" id="src" name="hidden_field" value="{{selection}}" style="display: none;"/>
+					</form> 
+				
+				<button onclick="document.getElementById('id01').style.display='block'" class="btn" name="upload" value="upload" style="width:auto;"><i class="fa fa-upload"></i>Upload</button> 
+																																									
+				<div id="id01" class="modal" style="float:right;text-align:left"> 
+				  <center>
+				  <form  class="container" align="right" class="modal-content animate"  method="POST" action="/upload_data" enctype="multipart/form-data"> 
+  
+					
+					  <label><b><font color="white">Enter file name</b></label> </font>
+					   <input type="text" id="file" name="file"  required>
+						<input type="text" id="src" name="hidden_field" value="{{selection}}" style="display: none;"/>
+					
+	  
+					  <div class="clearfix"> 
+						<button type="submit" style="background-color: #454585" style="width:150px;"class="signupbtn"><i class="fa fa-upload"></i>Upload</button> 
+					    <button type="button" style="background-color: red;"  style="width:150px;"class="cancel2" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn"><i class="fa fa-times"></i>Cancel</button> 
+					     
+					  </div> 
+					</form> 
+					
+				</div> 
+			</center>
+	
+		
+		<script> 
+  
+		var modal = document.getElementById('id01'); 
+		  
+		  
+		window.onclick = function(event) { 
+			if (event.target == modal) { 
+			   // modal.style.display = "none"; 
+			} 
+		} 
+		
+		
+		var searchString = document.location.search;
+		var modal1 = document.getElementById('id1'); 
+		var modal2 = document.getElementById('id2'); 
+		searchString = searchString.substring(1);
+if(searchString=='error')
+{
+	document.getElementById('myid').value=searchString;
+	var span = document.getElementById ("mySpan");
+	span.style.color = "white";
+	modal2.style.display = "none";
+}
+else if(searchString=='')
+{
+	var span = document.getElementById ("mySpan");
+            span.style.color = "transparent";
+			modal1.style.display = "none";
+			modal2.style.display = "none";
+			
+}
+else if(searchString=='error2')
+{
+		var span = document.getElementById ("mySpan");
+        span.style.color = "white";
+		modal1.style.display = "none";
+}
+
+		
+		
+</script> 
+		
+
+	
+	</body>
+</html>

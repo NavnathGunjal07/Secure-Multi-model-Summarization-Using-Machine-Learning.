@@ -1,0 +1,154 @@
+
+<Doctype>
+
+</Doctype>
+<html>
+<head>
+<title>Summarization</title>
+<link rel = "icon" href ="https://firebasestorage.googleapis.com/v0/b/summarization-d8b27.appspot.com/o/s.png?alt=media&token=becc1876-f259-499f-8dc6-2803b2bff777" type = "image/x-icon"> 
+<script>
+
+window.onload = function () {  
+        document.onkeydown = function (e) {  
+            return (e.which || e.keyCode) != 116;  
+        };
+
+history.pushState(null, null, document.URL);
+window.addEventListener('popstate', function () {
+    history.pushState(null, null, document.URL);
+});
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+button#arc{
+	width:200px;
+	padding: 7px;
+    font-size: 13px;
+    border: true;
+    width: 10%;
+	margin-top: 40px;
+	//margin-left:200px;
+	opacity:0.7;
+	border-radius:10px;
+	color:black;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Add styles to the form container */
+.container {
+    //position: absolute;
+	align:center;
+    max-width: 500px;
+    padding: 25px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;border-radius:25px;
+	border-radius:25px;
+	opacity:0.9;
+	margin-top:10px;
+	//margin-left:375px;
+	
+	
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] ,input[type=number],input[type=email]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password],input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+
+
+
+/* Set a style for the submit button */
+.btn {
+     background-color:#7ec89e;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+</style>
+</head>
+<body bgcolor="#4b4b5d">
+
+<center>
+  <br>
+  <form name="signup" class="container" method="POST" action="/signup">
+    <h1><font color="white">SIGN UP</font></h1>
+<center> <img src="static/signup.png"> </center>
+		{% if error %}
+			<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Error!! </strong>{{error}}
+</div>
+			
+		{% endif %}
+	
+	
+	
+	<input type="text" placeholder="Enter Name" name="name" id="fname" onkeypress="return (event.charCode > 64 && 
+	event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)|| (event.charCode == 8) || (event.charCode == 32)" required>
+	<br>
+
+    <input type="email" placeholder="Enter Email" name="email" required>
+	<br>
+	
+
+    <input type="password" placeholder="Enter Password" id="password-field"name="psw" maxlength="15" required>
+	<br>
+	
+    <input type="password" placeholder="Confirm Password" id="cpwd" name="cpwd" maxlength="15" required>
+	<br>
+
+	
+    <button type="submit" class="btn"><i class="fa fa-user-plus"></i>Sign Up</button>
+	<br>
+  </form>
+ 
+</body>
