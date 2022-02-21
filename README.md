@@ -10,7 +10,9 @@ data(Audio, Text).
 ## Authors
 
 - [Navnath Gunjal](https://github.com/NavnathGunjal07)
-
+- Aniket Taskar
+- Sandip Mapari
+- Swapnil Dahale
 
 
 ## Folder Structure
